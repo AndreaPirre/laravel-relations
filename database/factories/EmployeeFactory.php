@@ -10,7 +10,7 @@ $factory->define(Employee::class, function (Faker $faker) {
     return [
 
         'firstname' => $faker -> firstName(),
-        'lastname' =>   $faker -> lasttName(),
+        'lastname' =>   $faker -> lastName(),
         'date_of_birth' => $faker -> date(),
         'private_code' => $faker -> isbn13()
     ];

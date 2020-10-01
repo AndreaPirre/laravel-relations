@@ -18,6 +18,7 @@ class CreateLocationsTable extends Migration
             $table -> id();
 
             $table -> string('name');
+            $table -> string('street');
             $table -> string('city');
             $table -> string('state');
 
