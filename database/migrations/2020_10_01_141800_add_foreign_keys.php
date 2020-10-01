@@ -16,7 +16,7 @@ class AddForeignKeys extends Migration
         Schema::table('employees', function (Blueprint $table) {
 
             $table -> foreign('location_id', 'emp-loc')
-                   -> reference('id')
+                   -> references('id')
                    -> on('locations');
 
         });
@@ -29,6 +29,13 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('employees', function (Blueprint $table) {
+
+            $table -> dropForeign('emp-loc');
+
+
+        });
+
+        }
+
     }
-}
