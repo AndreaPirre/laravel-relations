@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Task extends Model
 {
-    protected $fillable [
+    protected $fillable = [
 
         'name',
         'description',
@@ -14,4 +14,7 @@ class Task extends Model
         'end_date'
 
     ];
+
+    public function employees() {
+        return $this -> belongsToMany(Employee::class);
 }
