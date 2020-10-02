@@ -3,14 +3,25 @@
 
 <h1>EMPLOYEES:</h1>
 
+<br> <br>
+
+<a href="{{ route('emp.create') }}">
+CREATE NEW EMPLOYEE
+</a>
+
+<br> <br> 
+
     <ul>
         @foreach ($emps as $emp)
 
         <li>
 
-            {{ $emp -> firstname }}
-            {{ $emp -> lastname }}
+            <a href="{{ route('emp.show', $emp -> id) }}">
 
+                {{ $emp -> firstname }}
+                {{ $emp -> lastname }}
+
+            </a>
         </li>
 
         @endforeach

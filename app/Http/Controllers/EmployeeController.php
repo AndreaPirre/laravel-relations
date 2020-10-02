@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Employee;
 
+use App\Location;
+
 use Illuminate\Http\Request;
 
 class EmployeeController extends Controller
@@ -14,4 +16,19 @@ class EmployeeController extends Controller
 
         return view('emp-index', compact('emps'));
     }
+
+    public function show($id) {
+        $emp = Employee::findOrFail($id);
+        return view('emp-show', compact('emp'));
+    }
+
+    public function create() {
+
+        $locs = Location::all();
+
+
+        return view('emp-create', compact('locs'));
+    }
+
+
 }
