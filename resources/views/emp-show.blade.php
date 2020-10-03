@@ -25,18 +25,25 @@
         ({{ $emp -> location -> city }}
             {{ $emp -> location -> state }})
     </li>
-    Tasks:
-    <ul>
-        @foreach ($emp -> tasks as $tas)
-        <li>
-            {{ $tas -> name }}:
-            {{ $tas -> start_date }} -
-            {{ $tas -> end_date }}
+    <li>
+        Tasks:
+        <ul>
+            @foreach ($emp -> tasks as $tas)
+            <li>
+                {{ $tas -> name }}:
+                {{ $tas -> start_date }} -
+                {{ $tas -> end_date }}
 
-        </li>
-        @endforeach
+            </li>
+            @endforeach
+        </ul>
+    </li>
+    <li>
 
-    </ul>
+
+        <a href="{{ route('emp.edit', $emp -> id) }}">EDIT</a><br>
+        <a href="{{ route('emp.destroy', $emp -> id) }}">DELETE</a>
+    </li>
 </ul>
 
 
